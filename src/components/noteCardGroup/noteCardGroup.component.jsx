@@ -1,13 +1,16 @@
 import { Card } from "semantic-ui-react";
+import NoteCard from '../noteCard/noteCard.component';
 
-const NoteCardGroup = ({note}) => {
-
+const NoteCardGroup = (props) => {
+    const notes  = props.note;
     return (
         <Card.Group itemsPerRow={4}>
-                  <Card>
-                    <Card.Content header={note[0].title} />
-                    <Card.Content description={note[0].description} />
-                  </Card>
+          {
+            (notes.length > 0) && notes.map((note,index) => (
+              <NoteCard key={index} note={note}/>
+            ))
+          }
+                
         </Card.Group>
     )
 }

@@ -16,7 +16,8 @@ function App() {
   const openHandler = () => {
     setOpenModal(true);
   }
-
+  
+  // each time I submit the form , I create a new object that I put in my array
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const title = event.target.title.value;
@@ -26,7 +27,6 @@ function App() {
       description
     }
     note.push(myNote)
-    console.log(note);
     setNote(note);
     setOpenModal(false);
 }
