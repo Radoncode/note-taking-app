@@ -1,35 +1,17 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import './App.css';
 import { Container, Header, Menu} from 'semantic-ui-react';
 import NoteModal from './components/noteModal/noteModal.component';
 import NoteCardGroup from './components/noteCardGroup/noteCardGroup.component';
+import { NoteContext } from './components/contexts/note.context';
 
 function App() {
 
-  const [openModal, setOpenModal] = useState(false);
-  const [note, setNote] = useState([]);
-  console.log(note);
-  const closeHandler = () => {
-      setOpenModal(false);
-  }
-
-  const openHandler = () => {
-    setOpenModal(true);
-  }
+  const {addNote, notes, openModal, setOpenModal} = useContext(NoteContext);
   
-  // each time I submit the form , I create a new object that I put in my array
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    const title = event.target.title.value;
-    const description = event.target.description.value;
-    const myNote = {
-      title,
-      description
-    }
-    note.push(myNote)
-    setNote(note);
-    setOpenModal(false);
-}
+  const closeHandler = () => setOpenModal(false);
+  const openHandler = () => setOpenModal(true);
+  const onSubmitHandler = (event) =>  addNote(event);
 
   return (
     <div>
@@ -48,7 +30,7 @@ function App() {
         </Menu.Menu>
       </Menu>
       {
-        (note.length) > 0 && (<NoteCardGroup note={note}/>) 
+        (notes.length) > 0 && (<NoteCardGroup />) 
       }
       </Container>
     </div>
