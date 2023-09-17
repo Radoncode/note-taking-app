@@ -47,7 +47,6 @@ export const NoteProvider = ({ children }) => {
                 return note;
             })
 
-        console.log(newNotes);
         setNotes(newNotes);
         setOpenEditModal(false)
     }
