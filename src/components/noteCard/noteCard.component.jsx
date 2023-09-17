@@ -6,12 +6,12 @@ import { Fragment} from 'react';
     
     const { title, description } = props.notecard;
     const { 
-        openNote: openNoteHandler,
-        closeNote: closeNoteHandler,
-        removeNote: removeNoteHandler,
-        openModal: openEditModal,
-        setOpenModal: setOpenEditModal,
-        selectNote: selectedCardData,
+        openNoteHandler,
+        closeNoteHandler,
+        removeNoteHandler,
+        openEditModal,
+        setOpenEditModal,
+        selectedCardData,
         onChangeHandlerTitle,
         onchangeHandlerDescription,
         onSubmitEditHandler
@@ -56,43 +56,6 @@ import { Fragment} from 'react';
             </Modal>   
         </Fragment> 
     )
-    /*return (
-        <Fragment>
-            <Card>
-                <Card.Content  />
-                <Card.Content  />
-                <Card.Content >
-                <div className='ui two buttons'>
-                    <Button >openEditForm</Button>
-                <Button   basic color='red'>
-                        Dismiss
-                </Button>
-            </div>
-                </Card.Content>
-            </Card>
-            <Modal 
-
-            >
-            <Modal.Header>
-                Edit Down your note
-            </Modal.Header>
-            <Modal.Content>
-            <Form  >
-            <Form.Field>
-              <label>Your title</label>
-                  <input type="text" name='title' placeholder='your title here'  value=''/>
-            </Form.Field>
-              <Form.Field>
-              <label>Your Note</label>
-                  <textarea placeholder='your description here' name='description' value=''  ></textarea>
-            </Form.Field>
-                <Button type='submit' color='green'>Edit</Button>
-            <Button type='submit'  color='red' >Cancel</Button>
-      </Form>
-      </Modal.Content>
-            </Modal>   
-        </Fragment> 
-    )*/
 }
 
 export default NoteCard;

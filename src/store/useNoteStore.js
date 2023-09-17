@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 
-
-
+// test with zustand
 export const useNoteStore = create((set) => ({
   notesList :[],
   addNoteAction: (payload) => set((state) => ({ notesList: [...state.notesList,payload]})),
